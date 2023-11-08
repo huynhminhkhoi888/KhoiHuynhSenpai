@@ -1,2 +1,2 @@
 def pr(value):
-  return value
+  return f'Hello {value}!'
