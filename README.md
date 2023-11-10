@@ -9,10 +9,10 @@ Module Giúp Bạn Né Bug Nhẹ
 Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 ## Nội Dung
 
-* * [Getting started](#getting-started)
+* [Getting started](#getting-started)
 * [Get Key Ngày Link1s Theo Ip](#get-key-ngay-link1s-theo-ip)
 * [Check Key Ngày Hoặc Key Vip](#check-key-ngay-hoac-key-vip)
-## Getting started
+## Getting star
 Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:
 ```
 $ pip install huynhminhkhoi
