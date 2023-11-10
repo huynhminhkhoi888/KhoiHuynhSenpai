@@ -9,10 +9,10 @@ Module Giúp Bạn Né Bug Nhẹ
 Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 ## Nội Dung
 
-* [Getting started](#getting-started)
+* [Cài Đặt Thư Viện](#c%C3%A0i-%C4%91%E1%BA%B7t-th%C6%B0-vi%E1%BB%87n)
 * [Get Key Ngày Link1s Theo Ip](#get-key-ngay-link1s-theo-ip)
 * [Check Key Ngày Hoặc Key Vip](#check-key-ngay-hoac-key-vip)
-## Getting star
+## Cài Đặt Thư Viện
 Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:
 ```
 $ pip install huynhminhkhoi
