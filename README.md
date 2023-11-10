@@ -6,7 +6,41 @@
 
 # <p align="center">huynhminhkhoi
 Module Giúp Bạn Né Bug Nhẹ
-Hãy Cùng Khám Phá Module Để Sử Dụng Nhé!
+Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 ## Nội Dung
 
-* [Cài Đặt Module](#getting-started)
+* [Cài Đặt Thư Viện](#getting-started)
+* [Get Key Ngày Link1s Theo Ip](#get-key-ngay)
+* [Check Key Ngày Hoặc Key Vip](#check-key)
+## Cài Đặt Thư Viện
+Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:
+```
+$ pip install huynhminhkhoi
+```
+## Get Key Ngày Link1s Theo Ip
+Lớp huynhminhkhoi (được định nghĩa trong \__init__.py) gói gọn 2 lệnh gọi API. Nó cung cấp các chức năng như `get_key` và `check_key` 
+
+Tạo 1 Tệp Có Tên Bất Kì Ví Dụ `khoidz.py`. Sau đó, mở tệp và tham khảo đoạn code dưới đây:
+```python
+import huynhminhkhoi
+import requests
+ip_get = requests.get('http://ip-api.com/json/').json()['query']
+client = huynhminhkhoi.Api.client("name_key", list_obj = list_token_link)
+get_key = client.get_key(ip = ip_get)
+print(get_key)
+```
+*Note: `name_key` sẽ là tên key của bạn, 
+`list_token_link` sẽ là danh sách lần lượt chứa token link1s và web chứa key của bạn.*
+
+Bạn có thể nhìn ví dụ dưới đây về danh sách chứa token và web chứa key tôi gợi ý ở trên:
+```python
+import huynhminhkhoi
+import requests
+ip_get = requests.get("http://ip-api.com/json/").json()['query']
+list_token_link = ["your_token", "https://huynhminhkhoidev.x10.mx/key.html?keyhomnay="]
+client = huynhminhkhoi.Api.client("name_key", list_obj = list_token_link)
+get_key = client.get_key(ip = ip_get)
+print(get_key)
+```
+## Check Key Ngày Hoặc Key Vip
+
