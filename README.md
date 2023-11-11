@@ -10,8 +10,8 @@ Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 ## Nội Dung
 
 * [Cài Đặt Thư Viện](#c%C3%A0i-%C4%91%E1%BA%B7t-th%C6%B0-vi%E1%BB%87n)
-* [Các Hàm Cơ Bản](#)
-* [Check Key Ngày Hoặc Key Vip](#check-key-ngay-hoac-key-vip)
+* [Các Hàm Cơ Bản](#c%C3%A1c-h%C3%A0m-c%C6%A1-b%E1%BA%A3n)
+* [Các Hàm Cho Admin](#check-key-ngay-hoac-key-vip)
 ## Cài Đặt Thư Viện
 Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:
 ```
