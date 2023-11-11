@@ -42,5 +42,5 @@ client = huynhminhkhoi.Api.client("name_key", list_obj = list_token_link)
 get_key = client.get_key(ip = ip_get)
 print(get_key)
 ```
-## Check Key Ngày Hoặc Key Vip
+## Các Hàm Dành Cho Admin
 
