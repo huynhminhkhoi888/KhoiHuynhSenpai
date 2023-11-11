@@ -5,7 +5,7 @@
 [![PyPi status](https://img.shields.io/pypi/status/pytelegrambotapi.svg?style=flat-square)](https://pypi.python.org/pypi/huynhminhkhoi)
 
 # <p align="center">huynhminhkhoi
-Module Giúp Bạn Né Bug Nhẹ
+Thư Viện Giúp Bạn Né Bug Nhẹ
 Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 ## Nội Dung
 
@@ -15,18 +15,20 @@ Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
   * [Check Key](#check-key)
 * [Code Demo](#code-demo)
 * [Các Hàm Cho Admin](#c%C3%A1c-h%C3%A0m-d%C3%A0nh-cho-admin)
+  * [Add Key](#add-key)
+  * [Remove Key](#remove-key)
 ## Cài Đặt Thư Viện
-Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:
+**Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:**
 ```
 $ pip install huynhminhkhoi
 ```
 
 ## Các Hàm Cơ Bản
-Lớp huynhminhkhoi (được định nghĩa trong \__init__.py) gói gọn 2 lệnh gọi API. Nó cung cấp các chức năng như `get_key` và `check_key` 
+**Lớp huynhminhkhoi (được định nghĩa trong \__init__.py) gói gọn 2 lệnh gọi API. Nó cung cấp các chức năng như `get_key` và `check_key`**
 
 ### Get Key
 
-Tạo 1 Tệp Có Tên Bất Kì Ví Dụ `khoidz.py`. Sau đó, mở tệp và tham khảo đoạn code dưới đây:
+**Tạo 1 Tệp Có Tên Bất Kì Ví Dụ `khoidz.py`. Sau đó, mở tệp và tham khảo đoạn code dưới đây:**
 
 ***Kết nối client:***
 
@@ -48,7 +50,7 @@ print(get_key)
 `list_token_link` sẽ là danh sách lần lượt chứa token link1s và web chứa key của bạn.***
 
 ### Check Key
-Để kiểm tra key đúng hay sai. Bạn có thể sử dụng đoạn code mẫu dưới đây:
+**Để kiểm tra key đúng hay sai. Bạn có thể sử dụng đoạn code mẫu dưới đây:**
 
 ***Giữ nguyên client:***
 ```python
@@ -128,8 +130,40 @@ while True:
 
 #Tiến Trình Sẽ Chạy Bên Dưới
 ```
-**Chú ý rằng nếu bạn code tool gộp dạng exec(). Hãy đặt check key ở sever đảm bảo né bug 1 chút**
+**Lưu ý rằng nếu bạn code tool gộp dạng exec(). Hãy đặt check key ở sever đảm bảo né bug 1 chút**
 
 **Bạn có thể tham khảo đoạn code này:**
+```python
+import huynhminhkhoi, sys, os, requests
+if not os.path.exists('key.txt'):
+    print("Bug Cái Gì Vậy Chú")
+    os.system(f"rm -rf {sys.argv[0]}")
+    quit()
+try:
+    read = eval(open('key.txt', 'r').read())
+except:
+    print("Bug Cái Gì Vậy Chú")
+    os.system(f"rm -rf {sys.argv[0]}")
+    quit()
+ip_ = requests.get('http://ip-api.com/json/').json()
+ip_get = ip_['query']
+list_ = ['Your_Token', 'https://huynhminhkhoidev.x10.mx/key.html?keyhomnay=']
+client = huynhminhkhoi.Api.client(name = 'KhoiHuynh1109', list_obj = list_)
+check = client.check_key(ip = ip_get, key = read['key'])
+if check['status'] == 'error':
+    print("Bug Cái Gì Vậy Chú")
+    os.system(f"rm -rf {sys.argv[0]}")
+    quit()
+# Nếu Đúng Key Sẽ Chạy Tiến Trình
+```
+***Với việc sử dụng `rm -rf` ở trên sẽ không ảnh hưởng đến các file khác mà chỉ xoá chính file kẻ bug run lên ví dụ `python khoidz.py` thì khi đó nó sẽ xoá `khoidz.py`***
+
+***Lưu ý rằng đây là code đặt ở các file sever giảm thiểu việc crack bằng cách bug ra sever.***
+
 ## Các Hàm Dành Cho Admin
+**Hàm dành cho admin là gì? Nó là các hàm giúp admin add các key vip như 3 ngày, 7 ngày hay 1 tháng**
+
+***Để sử dụng được hàm này ta cần key admin do Huỳnh Minh Khôi cấp cho. Bạn có thể liên hệ [Facebook](https://www.facebook.com/valerie.alvares) của Khôi để lấy key admin***
+
+### Add Key
 
