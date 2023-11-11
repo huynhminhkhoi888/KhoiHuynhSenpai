@@ -59,10 +59,77 @@ client = huynhminhkhoi.Api.client("name_key", list_obj = list_token_link)
 
 ***Check key với dữ liệu dict:***
 ```python
-check = client.check_key(key = "Your_Key")
+ip_get = requests.get('http://ip-api.com/json/').json()['query']
+check = client.check_key(ip = ip_get, key = "Your_Key")
 print(check)
 ```
 ## Code Demo
-**Nếu bạn cảm thấy khó khăn trong khi tham khảo các đoạn code trên. Tôi có 1 đoạn code mẫu để các bạn thuận tiện sử dụng hơn**
+**Nếu bạn cảm thấy khó khăn trong khi tham khảo các đoạn code trên. Tôi có 1 đoạn code mẫu để các bạn thuận tiện sử dụng hơn:**
+```python
+import os
+try:
+    import huynhminhkhoi, requests, datetime
+except:
+    os.system('pip install huynhminhkhoi')
+    os.system('pip install requests')
+
+ip_ = requests.get('http://ip-api.com/json/').json()
+ip_get = ip_['query']
+list_ = ['Your_Token', 'https://huynhminhkhoidev.x10.mx/key.html?keyhomnay=']
+client = huynhminhkhoi.Api.client(name = 'KhoiHuynh1109', list_obj = list_)
+while True:
+    if not os.path.exists('key.txt'):
+        print(f'Ip Của Bạn Là: {ip_get}')
+        get_key = client.get_key(ip = ip_get)
+        if get_key['status'] == 'error':
+            quit(get_key['message'])
+        print("Hello My World. I love you")
+        print(f"Link Key Ngày Của Bạn Là: {get_key['url']}")
+        password = input("Nhập Key Hôm Nay Để Sử Dụng: ")
+        check_key = client.check_key(ip = ip_get, key = password)
+        if check_key['status'] == 'success' and check_key['types'] == '1day':
+            data = {
+            'key': password,
+            'types': '1day',
+            'time_use': datetime.datetime.now(),
+            'date': datetime.timedelta(days = 1)
+            }
+            open('key.txt', 'w').write(str(data))
+        else:
+            open('key.txt', 'w').write(str(check_key))
+    with open('key.txt', 'r') as f:
+        js = eval(f.read())
+        try:
+            password = js['key']
+            time_use = js['time_use']
+            date = js['date']
+        except:
+            password = 'NhapKeyTaoLaoDitMeMay'
+    check_key = client.check_key(ip = ip_get, key = password)
+    if check_key['status'] == 'success':
+        if js['types'] == '1day':
+            now = datetime.datetime.now()
+            if now - time_use <= date:
+                hsd = str(date - (now - time_use)).split('.')[0]
+                print(f"Key Success | Loại Key: Free 1 Ngày | Sử Dụng Lúc: {time_use.strftime('%d/%m/%Y - %H:%M:%S')} | Hạn Sử Dụng: {hsd}")
+                break
+            else:
+                print("Key Hết Hạn!")
+                os.remove('key.txt')
+                continue
+        else:
+            key_types = js['types'].replace('3day', '3 Ngày').replace('7day', '7 Ngày').replace('1month', '1 Tháng')
+            print(f"Key Success | Loại Key: Key {key_types} | Sử Dụng Lúc: {time_use} | Hạn Sử Dụng: {check_key['date']}")
+            break
+    else:
+        print("Sai Key Rồi Em")
+        os.remove('key.txt')
+        continue
+
+#Tiến Trình Sẽ Chạy Bên Dưới
+```
+**Chú ý rằng nếu bạn code tool gộp dạng exec(). Hãy đặt check key ở sever đảm bảo né bug 1 chút**
+
+**Bạn có thể tham khảo đoạn code này:**
 ## Các Hàm Dành Cho Admin
 
