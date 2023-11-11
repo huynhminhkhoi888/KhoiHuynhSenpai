@@ -10,14 +10,14 @@ Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 ## Nội Dung
 
 * [Cài Đặt Thư Viện](#c%C3%A0i-%C4%91%E1%BA%B7t-th%C6%B0-vi%E1%BB%87n)
-* [Get Key Ngày Link1s Theo Ip](#get-key-ngay-link1s-theo-ip)
+* [Các Hàm Cơ Bản](#)
 * [Check Key Ngày Hoặc Key Vip](#check-key-ngay-hoac-key-vip)
 ## Cài Đặt Thư Viện
 Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:
 ```
 $ pip install huynhminhkhoi
 ```
-## Get Key Ngày Link1s Theo Ip
+## Các Hàm Cơ Bản
 Lớp huynhminhkhoi (được định nghĩa trong \__init__.py) gói gọn 2 lệnh gọi API. Nó cung cấp các chức năng như `get_key` và `check_key` 
 
 Tạo 1 Tệp Có Tên Bất Kì Ví Dụ `khoidz.py`. Sau đó, mở tệp và tham khảo đoạn code dưới đây:
