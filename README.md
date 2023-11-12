@@ -147,8 +147,7 @@ except:
     quit()
 ip_ = requests.get('http://ip-api.com/json/').json()
 ip_get = ip_['query']
-list_ = ['Your_Token', 'https://huynhminhkhoidev.x10.mx/key.html?keyhomnay=']
-client = huynhminhkhoi.Api.client(name = 'KhoiHuynh1109', list_obj = list_)
+client = huynhminhkhoi.Api.client(name = 'KhoiHuynh1109', list_obj = [])
 check = client.check_key(ip = ip_get, key = read['key'])
 if check['status'] == 'error':
     print("Bug Cái Gì Vậy Chú")
@@ -158,6 +157,8 @@ if check['status'] == 'error':
 ```
 ***Với việc sử dụng `rm -rf` ở trên sẽ không ảnh hưởng đến các file khác mà chỉ xoá chính file kẻ bug run lên ví dụ `python khoidz.py` thì khi đó nó sẽ xoá `khoidz.py`***
 
+***Ở `list_obj` phía trên không hề có đối tượng `token` và `long_url`. Bởi vì chỉ gọi hàm `check_key()` nên nó sẽ không xuất hiện lỗi.***
+
 ***Lưu ý rằng đây là code đặt ở các file sever giảm thiểu việc crack bằng cách bug ra sever.***
 
 ## Các Hàm Dành Cho Admin
@@ -166,4 +167,9 @@ if check['status'] == 'error':
 ***Để sử dụng được hàm này ta cần key admin do Huỳnh Minh Khôi cấp cho. Bạn có thể liên hệ [Facebook](https://www.facebook.com/valerie.alvares) của Khôi để lấy key admin***
 
 ### Add Key
+***Kết nối client:***
+```python
+from huynhminhkhoi import Admin
+client = Admin.client(admin = "Key_Admin")
+```
 
