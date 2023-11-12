@@ -173,3 +173,24 @@ from huynhminhkhoi import Admin
 client = Admin.client(admin = "Key_Admin")
 ```
 
+***Hàm add_key:***
+```python
+add = client.add_key(key = "Name_Key")
+```
+
+***Với `Key_Admin` là key admin được Huỳnh Minh Khôi đưa cho bạn và `Name_Key` là tên key mà bạn muốn***
+
+### Remove Key
+
+**Để xoá key người dùng hay bạn add nhầm key, bạn có thể sử dụng hàm `remove` để xoá nó.**
+
+***Giữ nguyên client:***
+```python
+from huynhminhkhoi import Admin
+client = Admin.client(admin = "Key_Admin")
+```
+
+***Hàm Remove:***
+```python
+rmv = client.remove(key = "Name_Key")
+```
