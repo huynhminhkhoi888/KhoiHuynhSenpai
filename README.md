@@ -100,8 +100,8 @@ while True:
         else:
             open('key.txt', 'w').write(str(check_key))
     with open('key.txt', 'r') as f:
-        js = eval(f.read())
         try:
+            js = eval(f.read())
             password = js['key']
             time_use = js['time_use']
             date = js['date']
