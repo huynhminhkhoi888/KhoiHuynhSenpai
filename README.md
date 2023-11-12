@@ -17,6 +17,7 @@ Hãy Cùng Khám Phá Thư Viện Để Sử Dụng Nhé!
 * [Các Hàm Cho Admin](#c%C3%A1c-h%C3%A0m-d%C3%A0nh-cho-admin)
   * [Add Key](#add-key)
   * [Remove Key](#remove-key)
+* [Contact](#contact)
 ## Cài Đặt Thư Viện
 **Thư viện này đã được thử nghiệm với Python 3.11. Cách cài đặt thư viện:**
 ```
@@ -194,3 +195,6 @@ client = Admin.client(admin = "Key_Admin")
 ```python
 rmv = client.remove(key = "Name_Key")
 ```
+
+## Contact
+**Liên hệ [Facebook](https://www.facebook.com/valerie.alvares) để được support hoặc báo lỗi cho tôi fix nhé. Cảm ơn!**
